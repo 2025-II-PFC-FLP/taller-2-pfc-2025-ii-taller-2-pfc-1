@@ -11,7 +11,7 @@ class ConjuntosDifusos {
  def grande(d: Int, e: Int): ConjDifuso = {
   def evalLargeNumber(n: Int): Double ={
    if(n <= 0) 0.0
-   else if (n>0 && n<1000) Math.pow(n.toDouble/(n+5).toDouble,e)
+   else if (n>0 && n<1000) Math.pow(n.toDouble/(n+d).toDouble,e)
    else 1.0
   }
   evalLargeNumber
