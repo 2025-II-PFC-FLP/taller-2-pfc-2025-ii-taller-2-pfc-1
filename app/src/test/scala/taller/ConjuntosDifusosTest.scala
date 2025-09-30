@@ -10,10 +10,10 @@ class ConjuntosDifusosTest extends AnyFunSuiteLike {
   val conjuntosDifusos = new ConjuntosDifusos()
 
   test("testPertenece") {
-    val conjDif1 = conjuntosDifusos.grande(100, 10)
+    val conjDif1 = conjuntosDifusos.grande(5, 2)
     assert(conjDif1(1001) == 1)
-    assert(conjDif1(999) < 1)
-    assert(conjDif1(400) <0.5)
+    assert(conjDif1(900) > 0.98)
+    assert(conjDif1(600) > 0.5)
     assert(conjDif1(-1) == 0)
     assert(conjDif1(-1001) == 0)
   }
@@ -35,7 +35,8 @@ class ConjuntosDifusosTest extends AnyFunSuiteLike {
   }
 
   test("testComplemento") {
-
+   /* val conjDif1 = conjuntosDifusos.grande(200, 20)
+    assert(conjDif1(1001) == 1)*/
   }
 
 }
