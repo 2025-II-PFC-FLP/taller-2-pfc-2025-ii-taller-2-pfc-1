@@ -11,12 +11,12 @@ class ConjuntosDifusos {
  }
 
  def grande(d: Int, e: Int): ConjDifuso = {
-  def evalLargeNumber(n: Int): Double = {
-   //require(e > 1, "e debe ser mayor a 1")
-   if(n <= 0) 0.0
-   else Math.pow(n.toDouble/(n+d).toDouble,e)
-  }
-  evalLargeNumber
+   def evalLargeNumber(n: Int): Double ={
+    if(n <= 0) 0.0
+    else Math.pow(n.toDouble/(n+d).toDouble,e)
+   }
+  if(d < 1 || e <= 1) throw new NumberFormatException("primer parametro debe ser mayor o igual a 1, segundo parametro debe ser mayor a 1")
+  else evalLargeNumber
  }
 
  def complemento(c: ConjDifuso): ConjDifuso = {
