@@ -30,11 +30,27 @@ class ConjuntosDifusosTest extends AnyFunSuiteLike {
 
 
   test("testUnion") {
+    val cDif1 = conjuntosDifusos.grande(5,2)
+    val cDif2 = conjuntosDifusos.grande(20,3)
+    val unionConjDif = conjuntosDifusos.union(cDif1,cDif2)
 
+    assert(conjuntosDifusos.pertenece(0, unionConjDif) == 0.0)
+    assert(conjuntosDifusos.pertenece(5, unionConjDif) >= math.max(conjuntosDifusos.pertenece(5, cDif1), conjuntosDifusos.pertenece(5, cDif2)))
+    assert(conjuntosDifusos.pertenece(100, unionConjDif) >= math.max(conjuntosDifusos.pertenece(100, cDif1), conjuntosDifusos.pertenece(100, cDif2)))
+    assert(conjuntosDifusos.pertenece(1001, unionConjDif) > 0.99)
+    assert(conjuntosDifusos.pertenece(-5, unionConjDif) == 0.0)
   }
 
   test("testInterseccion") {
+    val cDif1 = conjuntosDifusos.grande(5,2)
+    val cDif2 = conjuntosDifusos.grande(20,3)
+    val interConjDif = conjuntosDifusos.interseccion(cDif1,cDif2)
 
+    assert(conjuntosDifusos.pertenece(0, interConjDif) == 0.0)
+    assert(conjuntosDifusos.pertenece(5, interConjDif) >= math.min(conjuntosDifusos.pertenece(5, cDif1), conjuntosDifusos.pertenece(5, cDif2)))
+    assert(conjuntosDifusos.pertenece(100, interConjDif) >= math.min(conjuntosDifusos.pertenece(100, cDif1), conjuntosDifusos.pertenece(100, cDif2)))
+    assert(conjuntosDifusos.pertenece(1001, interConjDif) > 0.9)
+    assert(conjuntosDifusos.pertenece(-5, interConjDif) == 0.0)
   }
 
   test("testInclusion") {
