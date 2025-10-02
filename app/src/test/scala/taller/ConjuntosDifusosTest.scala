@@ -9,6 +9,14 @@ import org.scalatestplus.junit.JUnitRunner
 class ConjuntosDifusosTest extends AnyFunSuiteLike {
   val conjuntosDifusos = new ConjuntosDifusos()
 
+  test("testGrande"){
+    assertThrows[NumberFormatException](conjuntosDifusos.grande(0, 2))
+    assertThrows[NumberFormatException](conjuntosDifusos.grande(0, 0))
+    assertThrows[NumberFormatException](conjuntosDifusos.grande(10, 1))
+    assert(conjuntosDifusos.grande(2, 2).isInstanceOf[Int => Double])
+    assert(conjuntosDifusos.grande(20, 10).isInstanceOf[Int => Double])
+  }
+
   test("testPertenece") {
     val conjDif1 = conjuntosDifusos.grande(5, 2)
     assert(conjuntosDifusos.pertenece(1001, conjDif1) > 0.99)
@@ -41,7 +49,7 @@ class ConjuntosDifusosTest extends AnyFunSuiteLike {
     val cDif1 = conjuntosDifusos.grande(5,2)
     val cDif2 = conjuntosDifusos.grande(5,2)
     val cDif3 = conjuntosDifusos.grande(2,2)
-    val cDif4 = conjuntosDifusos.grande(0,1)
+    val cDif4 = conjuntosDifusos.grande(1,2)
     val cDif5 = conjuntosDifusos.grande(20,3)
     val cDif6 = conjuntosDifusos.grande(150,10)
 
@@ -56,7 +64,7 @@ class ConjuntosDifusosTest extends AnyFunSuiteLike {
     val cDif1 = conjuntosDifusos.grande(5,2)
     val cDif2 = conjuntosDifusos.grande(5,2)
     val cDif3 = conjuntosDifusos.grande(2,2)
-    val cDif4 = conjuntosDifusos.grande(0,1)
+    val cDif4 = conjuntosDifusos.grande(1,2)
     val cDif5 = conjuntosDifusos.grande(20,3)
     val cDif6 = conjuntosDifusos.grande(20,3)
 
