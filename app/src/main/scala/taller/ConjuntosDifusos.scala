@@ -35,8 +35,8 @@ class ConjuntosDifusos {
   @tailrec
   def evalConjuntos(acc : Int) : Boolean = {
    if(acc > 1000) true
-   else if (this.pertenece(acc, cd1) <= this.pertenece(acc, cd2)) evalConjuntos(acc + 1)
-   else false
+   else if (this.pertenece(acc, cd1) > this.pertenece(acc, cd2)) false
+   else evalConjuntos(acc + 1)
   }
   evalConjuntos(0)
  }

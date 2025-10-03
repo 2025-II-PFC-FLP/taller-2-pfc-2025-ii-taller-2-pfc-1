@@ -49,7 +49,7 @@ si se cumple dicho requerimiento, se procede a operar y retornar el valor respec
 ## Llamados de pila 
 Ejemplo:
 ```Scala
-val conjDifuso = grande(2,2)
+val conjDifuso = grande(5,2)
 ```
 ### Paso 1: Llamada con parámetro
 
@@ -59,19 +59,19 @@ conjDifuso(10)
 ### Paso 2: Evaluación
 
 ```Scala
-else Math.pow(n.toDouble/(n+d).toDouble,e) // (10/(10+2))^2
+else Math.pow(n.toDouble/(n+d).toDouble,e) // (10/(10+5))^2
 ```
-### Paso 2: Resultado
+### Paso 3: Resultado
 
 ```Scala
-return 0.6944444444444445
+return 0.4444444444444444
 ```
 
 ## Ejemplo de uso
 
 ```Scala
-val conjDifuso = grande(2,2)
-println(conjDifuso(10))  // 0.6944444444444445
+val conjDifuso = grande(5,2)
+println(conjDifuso(10))  // 0.4444444444444444
 ```
 
 

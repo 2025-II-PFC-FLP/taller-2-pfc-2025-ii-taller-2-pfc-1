@@ -1,4 +1,4 @@
-# Informe de proceso Algoritmo para definir si un número es grande
+# Informe de proceso Algoritmo para el la operacion de complemento en conjuntos difusos
 ## Definición del Algoritmo
 ```Scala
  def complemento(c: ConjDifuso): ConjDifuso = {
@@ -17,7 +17,7 @@ función como parametro.
 ## Llamados de pila
 Ejemplo:
 ```Scala
-val conjDifuso = grande(2,2) //d=2 y e=2 Math.pow(n.toDouble/(n+2).toDouble,2)
+val conjDifuso = grande(5,2) //d=5 y e=2 Math.pow(n.toDouble/(n+5).toDouble,2)
 val complementoConjDifuso = complemento(conjDifuso)
 ```
 ### Paso 1: Llamada mediante función de alto orden pertenece
@@ -38,77 +38,75 @@ evalLargeNumber(10) // n>0
 ```
 ### Paso 5: Evaluación de función evalLargeNumber
 ```Scala
-Math.pow(n.toDouble/(n+2).toDouble,2)
+Math.pow(n.toDouble/(n+5).toDouble,2)
 ```
 ### Paso 6: Evaluación de función evalLargeNumber - se reemplaza n en el numerador
 ```Scala
-Math.pow((10).toDouble/(n+2).toDouble,2)
+Math.pow((10).toDouble/(n+5).toDouble,2)
 ```
 ### Paso 7: Evaluación de función evalLargeNumber - n del numerador pasa a ser double
 ```Scala
-Math.pow(10.0/(n+2).toDouble,2)
+Math.pow(10.0/(n+5).toDouble,2)
 ```
 ### Paso 8: Evaluación de función evalLargeNumber - se reemplaza n del denominador
 ```Scala
-Math.pow(10.0/(10+2).toDouble,2)
+Math.pow(10.0/(10+5).toDouble,2)
 ```
 ### Paso 9: Evaluación de función evalLargeNumber - se suman los valores del denominador
 ```Scala
-Math.pow(10.0/(12).toDouble,2)
+Math.pow(10.0/(15).toDouble,2)
 ```
 ### Paso 10: Evaluación de función evalLargeNumber - el denominador pasa a ser double
 ```Scala
-Math.pow(10.0/12.0,2)
+Math.pow(10.0/15.0,2)
 ```
 ### Paso 11: Evaluación de función evalLargeNumber - se resuelve la división
 ```Scala
-Math.pow(0.8333333333333334,2)
+Math.pow(0.6666666666666666,2)
 ```
 ### Paso 12: Evaluación de función evalLargeNumber - se resuelve la potencia
 ```Scala
-0.6944444444444445
+0.4444444444444444
 ```
 ### Paso 13: Se devuelve el resultado a la evaluación de función complementoConjDifuso
 ```Scala
-1 - 0.6944444444444445
+1 - 0.4444444444444444
 ```
 ### Paso 14: Se resuelve complementoConjDifuso y se retorna el resultado
 ```Scala
-0.30555555555555547
+0.5555555555555556
 ```
 
 ## Ejemplo de uso
 
 ```Scala
-val conjDifuso = grande(2,2)
+val conjDifuso = grande(5,2)
 val complementoConjDifuso = complemento(conjDifuso)
-println(complementoConjDifuso(10))  // 0.30555555555555547
+println(complementoConjDifuso(10))  // 0.5555555555555556
 ```
 
 
 
 ## Diagrama de llamados
 
-```mermaid
-sequenceDiagram
-    participant Main as Main
-    participant pertenece as pertenece
-    participant complemento as complementoConjDifuso
-    participant grande as conjDifuso
-    participant eval as evalLargeNumber
-    participant Math as Math.pow
-
-    Main->>pertenece: pertenece(10, complementoConjDifuso)
-    pertenece->>complemento: complementoConjDifuso(10)
-    complemento->>grande: conjDifuso(10)
-    grande->>eval: evalLargeNumber(10)
-    eval->>Math: Math.pow(10.0/(10+2).toDouble, 2)
-    Math-->>eval: 0.6944444444444445
-    eval-->>grande: 0.6944444444444445
-    grande-->>complemento: 0.6944444444444445
-    complemento-->>pertenece: 1 - 0.6944444444444445 = 0.30555555555555547
-    pertenece-->>Main: 0.30555555555555547
-
+```mermaid  
+sequenceDiagram  
+ participant Main as Main 
+ participant pertenece as pertenece 
+ participant complemento as complementoConjDifuso 
+ participant grande as conjDifuso 
+ participant eval as evalLargeNumber 
+ participant Math as Math.pow  
+ Main->>pertenece: pertenece(10, complementoConjDifuso)
+ pertenece->>complemento: complementoConjDifuso(10) 
+ complemento->>grande: conjDifuso(10) 
+ grande->>eval: evalLargeNumber(10) 
+ eval->>Math: Math.pow(10.0/(10+2).toDouble, 2) 
+ Math-->>eval: 0.4444444444444444 
+ eval-->>grande: 0.4444444444444444
+ grande-->>complemento: 0.4444444444444444
+ complemento-->>pertenece: 1 - 0.4444444444444444 = 0.5555555555555556
+ pertenece-->>Main: 0.5555555555555556
 ```
 
 
