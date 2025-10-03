@@ -64,14 +64,14 @@ else Math.pow(n.toDouble/(n+d).toDouble,e) // (10/(10+2))^2
 ### Paso 2: Resultado
 
 ```Scala
-return 0.6944444444
+return 0.6944444444444445
 ```
 
 ## Ejemplo de uso
 
 ```Scala
 val conjDifuso = grande(2,2)
-println(conjDifuso(10))  // 0.6944444444
+println(conjDifuso(10))  // 0.6944444444444445
 ```
 
 
