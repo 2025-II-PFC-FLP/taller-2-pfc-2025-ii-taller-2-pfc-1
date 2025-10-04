@@ -1,9 +1,8 @@
 # Informe de corrección función para la inclusion en conjuntos difusos
 ## Definición 
 Sean $A$ y $B$ dos conjuntos difusos descritos con sus respectivas funciones de pertenecia:
-$$
-f_A :\mathbb{Z}\rightarrow[0,1], \quad f_B : \mathbb{Z}\rightarrow [0,1]
-$$
+
+$f_A :\mathbb{Z}\rightarrow[0,1], \quad f_B : \mathbb{Z}\rightarrow [0,1]$
 
 Se dice que $A$ aw incluye en $B$ cuando:
 
