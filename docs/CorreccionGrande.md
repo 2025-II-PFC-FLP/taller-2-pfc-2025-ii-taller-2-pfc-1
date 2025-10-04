@@ -5,7 +5,7 @@ Sea $d y e$ dos enteros que cumplen $d\geq\ y\  e>1$, y la función definida $f_
 $$
 f_{d,e}(n) =
 \begin{cases}
-0, & n \leq 0, \\[6pt]
+0, & n \leq 0, \[6pt]
 \left( \dfrac{n}{n+d} \right)^e, & n > 0
 \end{cases}
 $$
