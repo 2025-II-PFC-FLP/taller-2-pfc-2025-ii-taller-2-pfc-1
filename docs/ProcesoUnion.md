@@ -30,8 +30,8 @@ donde la entrada es un elemento que pertenece a los numeros enteros y la salida 
 
 
 ```scala
-val cd1 = grande(5,2)
-val cd2 = grande(20, 3)
+val cd1 = conjuntosDifusos.grande(5,2)
+val cd2 = conjuntosDifusos.grande(20, 3)
 val unionConjDif = union(cd1, cd2)
 
 println(unionConjDif(10)) //0.4444...

@@ -61,8 +61,8 @@ En esta función, se hacen llamadas anidadas a las funciones puras `cd1` y `cd2`
 Ejemplo:
 
 ```scala
-val cd1 = grande(5,2)
-val cd2 = grande(20, 3)
+val cd1 = conjuntosDifusos.grande(5,2)
+val cd2 = conjuntosDifusos.grande(20, 3)
 val interConjDif = interseccion(cd1, cd2)
 ```
 
